@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "ES7",
+    "importHelpers": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
+  }
+}

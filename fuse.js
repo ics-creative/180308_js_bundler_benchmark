@@ -1,0 +1,15 @@
+const {FuseBox} = require('fuse-box');
+
+process.env.NODE_ENV = 'production';
+
+const fuse = FuseBox.init({
+  homeDir: 'src/',
+  output: 'dist/fusebox/$name.js',
+  sourceMaps: false,
+  cache: false
+});
+
+fuse.bundle('index')
+  .instructions(`> index_best.js`);
+
+fuse.run();
