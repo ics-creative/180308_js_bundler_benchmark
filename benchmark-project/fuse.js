@@ -6,7 +6,8 @@ const fuse = FuseBox.init({
   homeDir: 'src/',
   output: 'dist/fusebox/$name.js',
   sourceMaps: false,
-  cache: false
+  cache: false,
+  tsConfig : "./tsconfig.json"
 });
 
 fuse.bundle('index')

@@ -3,61 +3,46 @@ FuseBox.pkg("default", {}, function(___scope___){
 ___scope___.file("index_best.js", function(exports, require, module, __filename, __dirname){
 
 "use strict";
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-exports.__esModule = true;
-var react_1 = require("react");
-var react_dom_1 = require("react-dom");
-var interval_1 = require("rxjs/observable/interval");
-var three_1 = require("three");
-var App = /** @class */ (function (_super) {
-    __extends(App, _super);
-    function App() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    App.prototype.componentDidMount = function () {
-        var width = 800;
-        var height = 600;
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+const react_dom_1 = require("react-dom");
+const interval_1 = require("rxjs/observable/interval");
+const three_1 = require("three");
+class App extends react_1.Component {
+    componentDidMount() {
+        const width = 800;
+        const height = 600;
         // レンダラーを作成
-        var renderer = new three_1.WebGLRenderer({ canvas: this.refs.myCanvas });
+        const renderer = new three_1.WebGLRenderer({ canvas: this.refs.myCanvas });
         renderer.setSize(width, height);
         // シーンを作成
-        var scene = new three_1.Scene();
+        const scene = new three_1.Scene();
         // カメラを作成
-        var camera = new three_1.PerspectiveCamera(45, width / height, 1, 10000);
+        const camera = new three_1.PerspectiveCamera(45, width / height, 1, 10000);
         camera.position.set(0, 0, +1000);
         // 箱を作成
-        var geometry = new three_1.BoxGeometry(500, 500, 500);
-        var material = new three_1.MeshPhongMaterial({ color: 0xFF0000 });
-        var box = new three_1.Mesh(geometry, material);
+        const geometry = new three_1.BoxGeometry(500, 500, 500);
+        const material = new three_1.MeshPhongMaterial({ color: 0xFF0000 });
+        const box = new three_1.Mesh(geometry, material);
         scene.add(box);
         // 平行光源
-        var directionalLight = new three_1.DirectionalLight(0xFFFFFF);
+        const directionalLight = new three_1.DirectionalLight(0xFFFFFF);
         directionalLight.position.set(1, 1, 1);
         // シーンに追加
         scene.add(directionalLight);
         interval_1.interval(30)
-            .subscribe(function () {
+            .subscribe(() => {
             // 箱を回転させる
             box.rotation.x += 0.01;
             box.rotation.y += 0.01;
             // レンダリング
             renderer.render(scene, camera);
         });
-    };
-    App.prototype.render = function () {
+    }
+    render() {
         return (react_1.createElement('canvas', { ref: 'myCanvas' }));
-    };
-    return App;
-}(react_1.Component));
+    }
+}
 react_dom_1.render(react_1.createElement(App), document.querySelector('#app'));
 
 });

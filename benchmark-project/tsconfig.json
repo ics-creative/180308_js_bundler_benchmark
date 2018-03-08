@@ -1,9 +1,13 @@
 {
   "compilerOptions": {
     "module": "es2015",
-    "target": "ES7",
+    "target": "es2017",
     "importHelpers": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": false,
+    "lib": [
+      "dom",
+      "es2017"
+    ]
   }
 }
