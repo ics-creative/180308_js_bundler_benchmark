@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "bench": "time npm run build-webpack-dev &&time npm run build-webpack-prod && time npm run build-rollup  && time npm run build-browserify && time npm run build-fusebox && time npm run build-percel",
+    "bench": "node ./benchmark.js",
     "build-webpack-prod": "webpack --mode production --output dist/main.webpack.prod.js",
     "build-webpack-dev": "webpack --mode development --output dist/main.webpack.dev.js",
     "build-rollup": "rollup -c",
