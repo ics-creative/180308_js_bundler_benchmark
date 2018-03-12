@@ -6,7 +6,7 @@
     "build-rollup": "rollup --config ./configs/rollup.config.js",
     "build-browserify": "NODE_ENV=production browserify src/index.cjs -o dist/main.browserify.js",
     "build-fusebox": "node ./configs/fuse",
-    "build-percel": "NODE_ENV=production parcel build src/index.js --out-dir dist/percel --no-minify --no-cache"
+    "build-parcel": "NODE_ENV=production parcel build src/index.js --out-dir dist/percel --no-minify --no-cache"
   },
   "devDependencies": {
     "browserify": "^16.1.1",
