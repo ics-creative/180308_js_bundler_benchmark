@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "bench": "node ./benchmark.js",
+    "build-webpack3": "webpack --config ./configs/webpack.config.js"
+  },
+  "devDependencies": {
+    "webpack": "3"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "rxjs": "^5.5.6",
+    "three": "^0.90.0"
+  }
+}

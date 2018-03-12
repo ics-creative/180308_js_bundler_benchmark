@@ -2,9 +2,7 @@
   "compilerOptions": {
     "module": "es2015",
     "target": "es2017",
-    "importHelpers": false,
-    "emitDecoratorMetadata": false,
-    "experimentalDecorators": false,
+    "allowSyntheticDefaultImports": true,
     "lib": [
       "dom",
       "es2017"

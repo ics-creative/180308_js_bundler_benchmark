@@ -1,10 +1,10 @@
-import {Component, createElement} from 'react';
-import {render} from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 
 import {interval} from 'rxjs/observable/interval';
 import {BoxGeometry, DirectionalLight, Mesh, MeshPhongMaterial, PerspectiveCamera, Scene, WebGLRenderer} from 'three';
 
-class App extends Component {
+class App extends React.Component {
   componentDidMount() {
     const width = 800;
     const height = 600;
@@ -45,10 +45,10 @@ class App extends Component {
 
   render() {
     return (
-      createElement('canvas', {ref: 'myCanvas'},)
+      React.createElement('canvas', { ref: 'myCanvas' },)
     );
   }
 }
 
-render(createElement(App), document.querySelector('#app'));
+ReactDOM.render(React.createElement(App), document.querySelector('#app'));
 

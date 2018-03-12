@@ -1,11 +1,11 @@
 {
   "scripts": {
     "bench": "node ./benchmark.js",
-    "build-webpack-prod": "webpack --mode production --output dist/main.webpack.prod.js",
-    "build-webpack-dev": "webpack --mode development --output dist/main.webpack.dev.js",
-    "build-rollup": "rollup -c",
+    "build-webpack4-prod": "webpack --config ./configs/webpack.config.js --mode production --output dist/main.webpack.prod.js",
+    "build-webpack4-dev": "webpack --config ./configs/webpack.config.js --mode development --output dist/main.webpack.dev.js",
+    "build-rollup": "rollup --config ./configs/rollup.config.js",
     "build-browserify": "NODE_ENV=production browserify src/index.cjs -o dist/main.browserify.js",
-    "build-fusebox": "node fuse",
+    "build-fusebox": "node ./configs/fuse",
     "build-percel": "NODE_ENV=production parcel build src/index.js --out-dir dist/percel --no-minify --no-cache"
   },
   "devDependencies": {
